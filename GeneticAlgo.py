@@ -96,12 +96,12 @@ class GeneticAlgo:
             c2 = self.parentChromosomes[pairOfChromosomes[1]] #define c2 as the second chromsome, index into the parent chromosomes
             c1 = self.mutation(c1) #run mutation operator
             c2 = self.mutation(c2) #run mutation operator
-            crossoverInds = self.crossover(c1, c2) #run the crossover function, return the two new chromosomes
-            newOffSpring = self.incompleteDominance(crossoverInds[0],crossoverInds[-1])
-            for i in range(len(newOffSpring)):
-                offSpring.append(newOffSpring[i])
-            #offSpring.append(newOffSpring[0])
-            #offSpring.append(newOffSpring[1])
+            newOffSpring = self.crossover(c1, c2) #run the crossover function, return the two new chromosomes
+            #newOffSpring = self.incompleteDominance(crossoverInds[0],crossoverInds[-1])
+            #for i in range(len(newOffSpring)):
+            #    offSpring.append(newOffSpring[i])
+            offSpring.append(newOffSpring[0])
+            offSpring.append(newOffSpring[1])
             numOffSpring = len(offSpring)
         self.childChromosomes = offSpring 
 
